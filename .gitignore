@@ -187,3 +187,8 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/Sources/.vs/CiteProc
+/Sources/CiteProc/.vs
+/Sources/CiteProc.CodeGenerator/.vs
+/Sources/CiteProc.Test/.vs
+/Sources/CiteProc.WpfDemo/.vs
