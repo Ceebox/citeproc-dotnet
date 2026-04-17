@@ -210,8 +210,8 @@ namespace CiteProc
         {
             // unknown attribute encountered
             throw new XmlException(string.Format("Unexpected attribute '{0}' encountered.", e.Attr.LocalName), null, e.LineNumber, e.LinePosition - 2 - e.Attr.Name.Length);
-
         }
+
         static void XmlSerializer_UnknownNode(object sender, XmlNodeEventArgs e)
         {
             if (e.NodeType != XmlNodeType.Attribute)

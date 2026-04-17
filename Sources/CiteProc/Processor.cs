@@ -20,44 +20,31 @@ namespace CiteProc
         /// <returns></returns>
         public static Processor Compile(params File[] files)
         {
-            // init
             Compiler compiler = null;
 
-            // single version
             var versions = files
                 .Select(x => x.Version)
                 .Distinct()
                 .ToArray();
+
             if (versions.Length != 1)
             {
                 throw new CompilerException("All files are required to have the same version.");
             }
 
-            // find version
-            switch (versions.Single().ToString())
+            compiler = versions.Single().ToString() switch
             {
-                case "1.0":
-                    compiler = v10.Runtime.Processor.Compile(files);
-                    break;
-                default:
-                    throw new CompilerException("Version '{0}' is not supported.", versions.Single());
-            }
+                "1.0" => v10.Runtime.Processor.Compile(files),
+                _ => throw new CompilerException("Version '{0}' is not supported.", versions.Single()),
+            };
 
-            // compile
-            var result = compiler.Compile();
-            if (result.Errors.Count > 0)
-            {
-                System.IO.File.AppendAllText(@"D:\templog.txt", result.Errors[0].ErrorText);
-                throw new NotSupportedException();
-            }
+            var compiledAssembly = compiler.Compile();
 
-            // done
-            var type = result.CompiledAssembly.GetTypes()
+            var type = compiledAssembly.GetTypes()
                 .Where(x => typeof(Processor).IsAssignableFrom(x))
                 .Single();
 
-            // done
-            return (Processor)type.GetConstructor(Type.EmptyTypes).Invoke(null);
+            return (Processor)Activator.CreateInstance(type);
         }
 
         /// <summary>
