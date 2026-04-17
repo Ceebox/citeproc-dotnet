@@ -72,7 +72,7 @@ namespace CiteProc.v10.Runtime
                 results.Add("citation-number", new Data.NumberVariable((uint)this.CitationNumber));
 
                 // done
-                return results;                    
+                return results;
             }
 
             private void DataProvider_PropertyChanged(object sender, PropertyChangedEventArgs e)

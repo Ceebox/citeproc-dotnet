@@ -35,7 +35,7 @@ namespace CiteProc.Compilation
                     // done
                     result.Items = new Scope[]
                     {
-                        scope 
+                        scope
                     };
                 }
             }

@@ -125,7 +125,7 @@ internal class Compiler : Snippet
             .Distinct()
             .Select(path => MetadataReference.CreateFromFile(path))
             .Concat(
-            [ 
+            [
                 MetadataReference.CreateFromFile(Path.Combine(Path.GetDirectoryName(typeof(object).Assembly.Location)!, "System.Runtime.dll"))
             ]);
 

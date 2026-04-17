@@ -30,7 +30,7 @@ namespace CiteProc
         public Culture(string xmlLang)
         {
             // spilt
-            var parts = (xmlLang ?? "").Split(new char[]{'-'}, StringSplitOptions.RemoveEmptyEntries);
+            var parts = (xmlLang ?? "").Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
             this._Language = (parts.Length == 0 || string.IsNullOrEmpty(parts[0]) || parts[0].Length != 2 ? null : parts[0].ToLower());
             this._Dialect = (parts.Length > 1 && !string.IsNullOrEmpty(parts[1]) && parts[1].Length == 2 && !string.IsNullOrEmpty(this._Language) ? parts[1].ToUpper() : null);
 

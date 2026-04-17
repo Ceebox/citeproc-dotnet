@@ -56,7 +56,7 @@ namespace CiteProc.v10.Runtime
             {
                 get
                 {
-                    return STOP_WORDS.Any(x => string.Compare(x, this._Match.Value, true) == 0); 
+                    return STOP_WORDS.Any(x => string.Compare(x, this._Match.Value, true) == 0);
                 }
             }
 

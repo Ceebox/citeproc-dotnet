@@ -11,7 +11,7 @@ namespace CiteProc.Formatting
     {
         private static readonly Dictionary<char, string> SUPERSCRIPTS = null;
         private static readonly Regex SUPERSCRIPTS_REGEX = null;
-        
+
         static SuperscriptHelper()
         {
             // create a replace list of superscript characters

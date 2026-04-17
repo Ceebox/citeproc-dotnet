@@ -62,7 +62,7 @@ namespace CiteProc.v10
         /// <summary>
         /// Acknowledges contributor(s) to the style.
         /// </summary>
-            [XmlElement("contributor")]
+        [XmlElement("contributor")]
         public PersonalDetailsElement[] Contributors
         {
             get;

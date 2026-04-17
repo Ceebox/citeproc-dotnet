@@ -114,7 +114,7 @@ namespace CiteProc.v10
             get;
             set;
         }
-        
+
         /// <summary>
         /// The delimiter attribute delimits non-empty pieces of output.
         /// </summary>
